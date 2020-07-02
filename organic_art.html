@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <title>ECO PRINTING</title>
+  <link rel="stylesheet" href="eco.css">
+
+</head>
+
+<body>
+
+  <div class="header">
+    <h1><b>ECO PRINTING</b></h1>
+  </div>
+
+  <div class="main">
+    <div class="imagebg">
+      <input type="file" name="file-selector" id="file-selector">
+      <button class="organic" onclick="retrieve()">
+        WHAT IS ECO PRINTING ?
+      </button>
+      <p id="result"></p>
+      <div class="main_content">
+        <img src="img/10.jpg">
+      </div>
+      <div class="main_content">
+        <img src="img/11.jpg">
+      </div>
+      <div class="main_content">
+        <img src="img/12.jpg">
+      </div>
+      <div class="main_content">
+        <img src="img/13.jpg">
+      </div>
+      <div class="main_content">
+        <img src="img/14.jpg">
+      </div>
+      <div class="main_content">
+        <img src="img/15.jpg">
+      </div>
+      <div class="main_content">
+        <img src="img/16.jpg">
+      </div>
+      <div class="main_content">
+        <img src="img/17.jpg">
+      </div>
+      <div class="main_content">
+        <img src="img/18.jpg">
+      </div>
+    </div>
+
+    <div class="steps">
+      <h4>HOW TO MAKE ECO PRINTS ?</h4>
+    </div>
+    <div class="element effect">
+      <div class="front">
+        <img src="img/a.jpg">
+      </div>
+      <div class="back">
+        <div class="back-content">
+          <h3>STEP 1</h3>
+          <p> Collect all seasonally available flowers, plants and kitchen waste. Kitchen scraps are actually my
+            favorite to use because they would otherwise go to waste. I also really like to collect dying flowers from
+            my garden and from my neighbors.
+            Also some salt and vinegar.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="element effect1">
+      <div class="front1">
+        <img src="img/b.jpg">
+      </div>
+      <div class="back1">
+        <div class="back-content">
+          <h3>STEP 2</h3>
+          <p> Place material on cloth, but really you can do it however you like. Play around with it and have fun!
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="element effect2">
+      <div class="front2">
+        <img src="img/c.jpg">
+      </div>
+      <div class="back2">
+        <div class="back-content">
+          <h3>STEP 3</h3>
+          <p> After you've placed the material onto your fabric it's time to roll it up tightly and secure with twine or
+            a rubber band. Then you simply steam it. So easy! I typically let my bundles steam for 1-2 hours and then
+            rest over night.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="element effect3">
+      <div class="front3">
+        <img src="img/d.jpg">
+      </div>
+      <div class="back3">
+        <div class="back-content">
+          <h3>STEP 4</h3>
+          <p>
+            Take out the clothes and let them dry. So there you have it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>You can do eco printing on papers , cotton cloth and silk cloths as well. </p>
+  </div>
+
+
+
+  <script type="text/javascript">
+    function retrieve() {
+      var fileInput = document.getElementById('file-selector');
+      fileInput.click();
+      fileInput.removeEventListener('change', readContent);
+      fileInput.addEventListener('change', readContent);
+    }
+
+    function readContent(event) {
+      const file = event.target.files[0];
+      var result = document.getElementById('result');
+      if (!file.type) {
+        result.innerText = 'Error: The File.type property does not appear to be supported on this browser.';
+        result.style.display = 'block';
+        return;
+      }
+      var reader = new FileReader();
+      reader.addEventListener('load', event => {
+        result.innerText = event.target.result;
+        result.style.display = 'block';
+      });
+      reader.readAsText(file);
+    }
+  </script>
+
+
+
+
+
+</body>
+
+</html>
